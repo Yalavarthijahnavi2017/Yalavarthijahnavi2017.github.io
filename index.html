@@ -3,263 +3,363 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jahnavi Yalavarthi — Data Engineer | Data Analyst</title>
-<meta name="description" content="Portfolio of Jahnavi Yalavarthi, Data Analyst at Webster Bank and M.S. Computer Science graduate. Python, SQL, pandas, ETL pipelines, Tableau dashboards.">
+<title>Yalavarthi Jahnavi — Data Engineer · Data Analyst</title>
+<meta name="description" content="Portfolio of Yalavarthi Jahnavi, Data Analyst at Webster Bank and M.S. Computer Science graduate. SQL, Python, pandas, ETL pipelines, Tableau dashboards.">
 <style>
   :root{
-    --primary:#1F3B57; --accent:#2E86AB; --bg:#f5f7fa; --card:#ffffff;
-    --text:#222; --muted:#5a6c7d; --tag-bg:#e8eef4; --tag-text:#1F3B57;
+    --orange:#E8590C; --orange2:#F76707; --orange-soft:#FFF1E6; --ink:#212429;
+    --muted:#6f6a63; --bg:#FFFBF5; --card:#ffffff; --line:#F1E2D0;
   }
   *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-       background:var(--bg);color:var(--text);line-height:1.6}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-  header.hero{background:linear-gradient(135deg,#1F3B57 0%,#2E86AB 100%);color:#fff;
-              padding:64px 0 56px;text-align:center}
-  header.hero h1{font-size:2.6rem;letter-spacing:1px;margin-bottom:8px}
-  header.hero .role{font-size:1.2rem;opacity:.92;margin-bottom:16px}
-  header.hero p.summary{max-width:680px;margin:0 auto 24px;opacity:.9;font-size:1rem}
-  .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .btn{display:inline-block;padding:10px 22px;border-radius:6px;text-decoration:none;
-       font-weight:600;font-size:.95rem;transition:transform .15s ease}
-  .btn-light{background:#fff;color:var(--primary)}
-  .btn-outline{border:2px solid #fff;color:#fff}
-  .btn:hover{transform:translateY(-2px)}
-  section{padding:44px 0}
-  h2{font-size:1.5rem;color:var(--primary);margin-bottom:4px;
-     padding-bottom:8px;border-bottom:3px solid var(--accent);display:inline-block}
-  .sec-sub{color:var(--muted);margin:8px 0 20px}
-  .card{background:var(--card);border-radius:10px;padding:24px;margin-bottom:18px;
-        box-shadow:0 2px 8px rgba(31,59,87,.08)}
-  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-  .tag{background:var(--tag-bg);color:var(--tag-text);font-size:.82rem;font-weight:600;
-       padding:4px 12px;border-radius:20px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
-  .stat{background:var(--card);border-radius:10px;padding:22px;text-align:center;
-        box-shadow:0 2px 8px rgba(31,59,87,.08)}
-  .stat .num{font-size:1.6rem;font-weight:700;color:var(--primary)}
-  .stat .lbl{color:var(--muted);font-size:.9rem;margin-top:6px}
-  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
-  .proj-grid .card{margin-bottom:0;display:flex;flex-direction:column}
-  .proj-grid .card h3{color:var(--primary);font-size:1.1rem;margin-bottom:8px}
-  .proj-grid .card p{font-size:.94rem;color:var(--muted);flex:1}
-  .proj-link{margin-top:14px;font-weight:600;color:var(--accent);text-decoration:none;font-size:.92rem}
-  .proj-link:hover{text-decoration:underline}
-  .job-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:6px}
-  .job-head strong{color:var(--primary)}
-  .job-head span{color:var(--muted);font-size:.9rem;font-style:italic}
+       background:var(--bg);color:var(--ink);line-height:1.6}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+  nav{position:sticky;top:0;background:rgba(255,251,245,.92);backdrop-filter:blur(8px);
+      border-bottom:1px solid var(--line);z-index:10}
+  .nav-in{display:flex;align-items:center;gap:14px;padding:12px 0}
+  .logo{width:38px;height:38px;border-radius:9px;background:linear-gradient(135deg,var(--orange),var(--orange2));
+        color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;letter-spacing:.5px}
+  .nav-name{font-weight:700}
+  .nav-label{color:var(--orange);font-size:.72rem;font-weight:700;letter-spacing:1.5px}
+  .nav-links{margin-left:auto;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+  .nav-links a{color:var(--ink);text-decoration:none;font-size:.92rem;font-weight:600}
+  .nav-links a:hover{color:var(--orange)}
+  .btn{display:inline-block;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.92rem}
+  .btn-orange{background:var(--orange);color:#fff}
+  .btn-orange:hover{background:var(--orange2)}
+  .btn-ghost{border:2px solid var(--orange);color:var(--orange);background:transparent}
+  .btn-ghost:hover{background:var(--orange-soft)}
+  header.hero{padding:72px 0 56px;background:
+    radial-gradient(600px 300px at 85% 0%, #FFE3C2 0%, rgba(255,227,194,0) 60%),
+    linear-gradient(180deg,#FFF6EA 0%, var(--bg) 100%)}
+  .eyebrow{color:var(--orange);font-weight:800;letter-spacing:2px;font-size:.78rem;text-transform:uppercase}
+  header.hero h1{font-size:3rem;line-height:1.1;margin:12px 0 6px}
+  header.hero .headline{font-size:1.45rem;font-weight:700;color:var(--ink);max-width:640px}
+  header.hero .intro{color:var(--muted);max-width:640px;margin:14px 0 24px;font-size:1.02rem}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+  .chips{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;
+        font-size:.85rem;font-weight:600;color:var(--ink)}
+  .chip b{color:var(--orange)}
+  section{padding:52px 0 8px}
+  .sec-eyebrow{color:var(--orange);font-weight:800;letter-spacing:2px;font-size:.75rem;text-transform:uppercase}
+  h2{font-size:1.9rem;margin:6px 0 4px}
+  .sec-sub{color:var(--muted);margin-bottom:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-bottom:18px;
+        box-shadow:0 2px 10px rgba(232,89,12,.05)}
+  .grid2{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;align-items:start}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}header.hero h1{font-size:2.2rem}}
+  .profile-card{background:linear-gradient(160deg,#2B2118,#3A2A1A);color:#FFF6EA;border-radius:14px;padding:24px}
+  .profile-card .pname{font-size:1.25rem;font-weight:800}
+  .profile-card .prole{color:#FFB27A;font-weight:700;margin-bottom:14px}
+  .profile-card .prow{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-top:1px solid rgba(255,255,255,.14);font-size:.92rem}
+  .profile-card .prow span:first-child{color:#D8C7B4}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:18px}
+  .stat{background:#fff;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;padding:18px}
+  .stat .num{font-size:1.45rem;font-weight:800;color:var(--orange)}
+  .stat .lbl{color:var(--muted);font-size:.9rem;margin-top:4px}
+  .job-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:4px}
+  .job-title{font-weight:800;font-size:1.05rem}
+  .job-org{color:var(--orange);font-weight:700}
+  .job-meta{color:var(--muted);font-size:.88rem;font-style:italic}
+  .current{display:inline-block;background:var(--orange);color:#fff;font-size:.68rem;font-weight:800;
+           letter-spacing:1px;border-radius:4px;padding:2px 8px;vertical-align:middle;margin-left:8px}
   ul.bullets{margin:8px 0 0 20px;font-size:.95rem}
   ul.bullets li{margin-bottom:6px}
-  .skill-group{margin-bottom:14px}
-  .skill-group strong{color:var(--primary);font-size:.95rem}
-  footer{background:var(--primary);color:#fff;text-align:center;padding:28px 0;margin-top:20px}
-  footer p{opacity:.85;font-size:.92rem;margin-bottom:6px}
-  footer a{color:#fff;font-weight:600}
-  @media(max-width:600px){header.hero h1{font-size:2rem}}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+  .tag{background:var(--orange-soft);color:#9A3A06;font-size:.8rem;font-weight:700;padding:4px 12px;border-radius:20px}
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:18px}
+  .proj-grid .card{margin-bottom:0;display:flex;flex-direction:column}
+  .proj-grid h3{font-size:1.08rem;margin-bottom:6px}
+  .proj-grid p{font-size:.93rem;color:var(--muted);flex:1}
+  .proj-cat{color:var(--orange);font-size:.72rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:6px}
+  .metric{font-weight:800;color:var(--orange);margin-top:10px;font-size:.95rem}
+  .proj-link{margin-top:10px;font-weight:700;color:var(--orange);text-decoration:none;font-size:.9rem}
+  .proj-link:hover{text-decoration:underline}
+  .skill-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+  .skill-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}
+  .skill-card h4{color:var(--orange);margin-bottom:8px;font-size:.95rem}
+  .skill-card p{font-size:.92rem;color:var(--ink)}
+  .skillmap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:18px;text-align:center}
+  .core{display:inline-block;background:var(--orange);color:#fff;font-weight:800;border-radius:10px;padding:12px 22px;margin-bottom:18px}
+  .branches{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;text-align:left}
+  .branch{border:1px dashed #F0B27A;border-radius:10px;padding:14px}
+  .branch h5{color:var(--orange);margin-bottom:6px;font-size:.9rem}
+  .branch p{font-size:.88rem;color:var(--muted)}
+  .cert-band{background:linear-gradient(135deg,var(--orange),var(--orange2));color:#fff;border-radius:14px;
+             padding:26px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .cert-band .ct{font-size:1.2rem;font-weight:800}
+  .cert-band .cs{opacity:.92;font-size:.94rem;max-width:560px}
+  .cert-badge{background:#fff;color:var(--orange);font-weight:800;border-radius:8px;padding:8px 14px;white-space:nowrap}
+  footer{background:#241A10;color:#E9DCC8;text-align:center;padding:30px 0;margin-top:52px}
+  footer p{opacity:.85;font-size:.92rem}
+  .contact-links{font-size:1rem}
+  .contact-links a{color:var(--orange);font-weight:700;text-decoration:none}
+  .contact-links a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
+<nav>
+  <div class="wrap nav-in">
+    <div class="logo">YJ</div>
+    <div>
+      <div class="nav-name">Yalavarthi Jahnavi</div>
+      <div class="nav-label">DATA ENGINEER · DATA ANALYST</div>
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a class="btn btn-orange" href="#contact">Get in touch</a>
+    </div>
+  </div>
+</nav>
+
 <header class="hero">
   <div class="wrap">
-    <h1>JAHNAVI YALAVARTHI</h1>
-    <div class="role">Data Engineer &nbsp;|&nbsp; Data Analyst</div>
-    <p class="summary">Data Analyst at Webster Bank (via Franklar Technologies) with an M.S. in Computer Science.
-      I build ETL workflows and data pipelines, tune SQL until it is fast, and turn raw data into Tableau
-      dashboards that finance and risk teams rely on. Strongest in Python and SQL; project work spans NLP,
-      computer vision, and distributed systems.</p>
-    <div class="btns">
-      <a class="btn btn-light" href="mailto:yalavarthijahnavi2017@gmail.com">Email Me</a>
-      <a class="btn btn-outline" href="https://www.linkedin.com/in/jahnavi-yalavarthi-36a9232a4/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn btn-outline" href="https://github.com/Yalavarthijahnavi2017" target="_blank" rel="noopener">GitHub</a>
+    <div class="eyebrow">Indiana, USA — open to opportunities across the US</div>
+    <h1>Yalavarthi Jahnavi</h1>
+    <div class="headline">Building reliable data pipelines and the analytics that power decisions.</div>
+    <p class="intro">I'm a data engineer and analyst who turns raw, messy data into fast, trustworthy pipelines
+      and dashboards — from ingestion and transformation to the numbers teams actually act on. Currently a
+      Data Analyst at Webster Bank, working in SQL, Python, and Tableau.</p>
+    <div class="hero-btns">
+      <a class="btn btn-orange" href="#projects">See my work ↓</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+    <div class="chips">
+      <span class="chip"><b>SQL · Python · pandas</b></span>
+      <span class="chip">ETL · Apache Kafka · Tableau</span>
+      <span class="chip">MS Computer Science, Indiana State</span>
     </div>
   </div>
 </header>
 
 <div class="wrap">
 
-  <section id="highlights">
-    <h2>Highlights</h2>
-    <p class="sec-sub">Results from my current role and projects.</p>
-    <div class="stats">
-      <div class="stat"><div class="num">3+ min → ~4 sec</div><div class="lbl">Portfolio query tuning at Webster Bank — indexing + JOIN restructuring</div></div>
-      <div class="stat"><div class="num">1.5 hrs → automated</div><div class="lbl">Recurring manual CSV cleaning replaced with a Python/pandas pipeline</div></div>
-      <div class="stat"><div class="num">88% accuracy</div><div class="lbl">Churn prediction model on 500K+ records (Python, SQL)</div></div>
-      <div class="stat"><div class="num">87% accuracy</div><div class="lbl">AI medical symptom chatbot (Python, Flask, NLP)</div></div>
-    </div>
-  </section>
-
   <section id="about">
-    <h2>About</h2>
-    <p class="sec-sub">&nbsp;</p>
-    <div class="card">
-      <p>I'm a data analyst and aspiring data engineer based in Terre Haute, Indiana, open to relocating
-        anywhere in the U.S. Day to day I work with SQL Server and MySQL querying, Python/pandas automation,
-        and Tableau dashboards for finance and risk stakeholders. My approach is structured: understand the
-        problem, isolate the cause, fix it, and re-validate the result before calling it done.</p>
-      <p style="margin-top:10px">Before Webster Bank, I spent two years as a Graduate Assistant at Indiana State
-        University — running daily operations and building the portal and reporting automation the center ran
-        on — and completed internships in data science, software engineering, and cybersecurity.</p>
+    <div class="sec-eyebrow">01 — About</div>
+    <h2>Data work, owned end to end.</h2>
+    <p class="sec-sub">Not just queries — full ownership from raw source to a dashboard someone trusts.</p>
+    <div class="grid2">
+      <div class="card" style="margin-bottom:0">
+        <p>MS in Computer Science from Indiana State University (graduated December 2025), now working as a
+          Data Analyst at Webster Bank and building data engineering projects across SQL, Python, and cloud
+          tooling. My strength is performance and reliability: tracing a slow production query to its indexing
+          and join structure, restructuring pipelines so they run cleanly every day, and documenting the work
+          so the next person isn't guessing.</p>
+        <p style="margin-top:10px">I work across the stack — ingestion, transformation, modeling, and
+          dashboards — and I care about the same thing in every layer: is it fast, is it correct, and can the
+          team trust it?</p>
+      </div>
+      <div class="profile-card">
+        <div class="pname">Yalavarthi Jahnavi</div>
+        <div class="prole">Data Engineer &amp; Data Analyst</div>
+        <div class="prow"><span>Based in</span><span>Indiana, USA</span></div>
+        <div class="prow"><span>Education</span><span>MS CS — Indiana State ’25</span></div>
+        <div class="prow"><span>Focus</span><span>Pipelines · Analytics · Tuning</span></div>
+      </div>
     </div>
-  </section>
-
-  <section id="skills">
-    <h2>Technical Skills</h2>
-    <p class="sec-sub">The toolkit I build with.</p>
-    <div class="card">
-      <div class="skill-group"><strong>Languages:</strong> Python, SQL, Java, PHP</div>
-      <div class="skill-group"><strong>Data &amp; Analytics:</strong> pandas, ETL workflows, data pipelines, data warehousing, data cleaning and validation, Tableau dashboards, reporting</div>
-      <div class="skill-group"><strong>Databases:</strong> SQL Server, MySQL, MongoDB, SQLite, Redis</div>
-      <div class="skill-group"><strong>Machine Learning &amp; AI:</strong> Machine Learning, NLP, Hugging Face Transformers, Computer Vision</div>
-      <div class="skill-group"><strong>Web &amp; APIs:</strong> React, Flask, FastAPI, REST APIs</div>
-      <div class="skill-group"><strong>Cloud &amp; Systems:</strong> AWS, Azure, Apache Kafka, Distributed Systems</div>
-      <div class="skill-group"><strong>Other:</strong> ServiceNow (CSA), Blockchain, Network Security, Cybersecurity</div>
+    <div class="stats">
+      <div class="stat"><div class="num">3 min → 4 sec</div><div class="lbl">Production portfolio query optimized at Webster Bank</div></div>
+      <div class="stat"><div class="num">1.5 hrs → automated</div><div class="lbl">Manual CSV cleaning replaced with a Python/pandas pipeline</div></div>
+      <div class="stat"><div class="num">88%</div><div class="lbl">Churn model accuracy on 500K+ records</div></div>
+      <div class="stat"><div class="num">87%</div><div class="lbl">Classification accuracy — AI medical chatbot</div></div>
     </div>
   </section>
 
   <section id="experience">
-    <h2>Experience</h2>
-    <p class="sec-sub">Where I've worked.</p>
+    <div class="sec-eyebrow">02 — Experience</div>
+    <h2>Where I've worked</h2>
+    <p class="sec-sub">Finance and risk reporting, university operations and research data, and internships that turned into measurable results.</p>
 
     <div class="card">
-      <div class="job-head"><strong>Data Analyst — Webster Bank (via Franklar Technologies)</strong><span>Mar 2026 – Present · Remote</span></div>
+      <div class="job-head"><div><span class="job-title">Data Analyst</span> — <span class="job-org">Webster Bank</span><span class="current">CURRENT</span></div><span class="job-meta">Mar 2026 – Present · Remote</span></div>
+      <div class="job-meta">via Franklar Technologies</div>
       <ul class="bullets">
         <li>Inherited a portfolio reporting query that took 3+ minutes to run; restructured its JOINs and added indexes — cutting runtime to ~4 seconds and restoring timely reporting for finance and risk stakeholders.</li>
         <li>Faced with recurring CSV files that consumed ~1.5 hours of manual cleaning each cycle, built Python/pandas automation to clean and standardize them, replacing the manual process.</li>
         <li>Reworked bulk data loads to commit in 1,000-row batches, eliminating reporting-database lockups and keeping downstream dashboards current.</li>
         <li>Design, update, and maintain Tableau dashboards that translate portfolio data into clear metrics for finance and risk stakeholders.</li>
       </ul>
+      <div class="tags"><span class="tag">SQL · MySQL · SQL Server</span><span class="tag">Query Tuning</span><span class="tag">Python Automation</span><span class="tag">Tableau</span></div>
     </div>
 
     <div class="card">
-      <div class="job-head"><strong>Graduate Assistant — Indiana State University</strong><span>Jan 2024 – Dec 2025 · Part-time</span></div>
+      <div class="job-head"><div><span class="job-title">Graduate Assistant</span> — <span class="job-org">Indiana State University</span></div><span class="job-meta">Jan 2024 – Dec 2025 · Part-time</span></div>
       <ul class="bullets">
         <li>Built an internal operations portal (React, Flask, MongoDB REST API) that replaced paperwork-based processes; center staff used it daily for enrollment and scheduling.</li>
         <li>Wrote Python scripts automating recurring reporting tasks, reducing manual processing effort by ~30%.</li>
         <li>Provided technical troubleshooting support to 25+ students and center staff: determined whether each issue was application, user-access, or system-behavior related; performed component-level diagnosis and replacement of faulty hardware (memory, storage) where within scope; resolved or escalated each issue and verified the system worked before closing.</li>
         <li>Ran daily operations — enrollment, scheduling, staff coordination, and accurate operational records.</li>
       </ul>
+      <div class="tags"><span class="tag">React · Flask · MongoDB</span><span class="tag">Python Automation</span><span class="tag">Technical Support</span><span class="tag">Operations</span></div>
     </div>
 
     <div class="card">
-      <div class="job-head"><strong>Data Science Intern — Analytics Hub India</strong><span>Jan 2023 – Apr 2023 · Hyderabad, India</span></div>
+      <div class="job-head"><div><span class="job-title">Data Science Intern</span> — <span class="job-org">Analytics Hub India</span></div><span class="job-meta">Jan – Apr 2023 · Hyderabad, India</span></div>
       <ul class="bullets">
         <li>Processed and validated datasets with Python, SQL, and cloud-based data tools to maintain data accuracy for analysis deliverables.</li>
         <li>Built repeatable ETL workflows; documented data quality issues, outputs, and troubleshooting steps.</li>
       </ul>
+      <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">ETL</span><span class="tag">Data Validation</span></div>
     </div>
 
     <div class="card">
-      <div class="job-head"><strong>Research Author &amp; Conference Presenter — Vasireddy Venkatadri International Technological University</strong><span>Jan 2023 – Apr 2023 · Internship, India</span></div>
+      <div class="job-head"><div><span class="job-title">Research Author &amp; Conference Presenter</span> — <span class="job-org">VVITU</span></div><span class="job-meta">Jan – Apr 2023 · India</span></div>
       <ul class="bullets">
         <li>Co-authored and presented "Smart Grid Asset Monitoring and Management through Blockchain Technology" at the ICRASTEM-2K23 International Conference.</li>
         <li>Proposed a blockchain-based framework for smart grid asset monitoring focused on transparency, security, and decentralized control.</li>
       </ul>
+      <div class="tags"><span class="tag">Blockchain</span><span class="tag">Research</span><span class="tag">ICRASTEM-2K23</span></div>
     </div>
 
     <div class="card">
-      <div class="job-head"><strong>Software Engineer Intern — Tech Solutions Pvt Ltd</strong><span>Jun 2022 – Aug 2022 · Guntur, India</span></div>
+      <div class="job-head"><div><span class="job-title">Software Engineer Intern</span> — <span class="job-org">Tech Solutions Pvt Ltd</span></div><span class="job-meta">Jun – Aug 2022 · Guntur, India</span></div>
       <ul class="bullets">
         <li>Built and tested backend REST API functionality; investigated and debugged application defects.</li>
         <li>Used Python, SQL, and Git-based workflows for data handling, code changes, and technical documentation.</li>
       </ul>
+      <div class="tags"><span class="tag">REST APIs</span><span class="tag">Python</span><span class="tag">Debugging</span><span class="tag">Git</span></div>
     </div>
 
     <div class="card">
-      <div class="job-head"><strong>Cybersecurity Virtual Intern — Palo Alto Networks (AICTE / EduSkills)</strong><span>Mar 2022 – May 2022 · Remote, India</span></div>
+      <div class="job-head"><div><span class="job-title">Cybersecurity Virtual Intern</span> — <span class="job-org">Palo Alto Networks (AICTE / EduSkills)</span></div><span class="job-meta">Mar – May 2022 · Remote, India</span></div>
       <ul class="bullets">
         <li>Completed a competitive 10-week virtual internship in network security — firewall configuration concepts, TCP/IP networking fundamentals, threat analysis, and security policy management — through hands-on labs and real-world case studies.</li>
       </ul>
+      <div class="tags"><span class="tag">Network Security</span><span class="tag">Firewalls</span><span class="tag">Threat Analysis</span></div>
     </div>
 
     <div class="card">
-      <div class="job-head"><strong>Undergraduate Research Assistant — Vasireddy Venkatadri Institute of Technology</strong><span>Aug 2021 – Dec 2022 · India</span></div>
+      <div class="job-head"><div><span class="job-title">Undergraduate Research Assistant</span> — <span class="job-org">VVIT</span></div><span class="job-meta">Aug 2021 – Dec 2022 · Part-time</span></div>
       <ul class="bullets">
         <li>Collected, cleaned, and analyzed research datasets with Python and SQL under faculty supervision.</li>
         <li>Served as the go-to technical support contact for lab workstations: triaged hardware fault reports starting with physical checks (power, cabling, peripherals) before assuming component failure; isolated faulty memory, storage, and peripheral components through systematic testing and replaced failed parts; diagnosed network connectivity drops step by step; owned each issue from report through resolution or escalation.</li>
         <li>Performed Windows 10/11 OS and driver installations; configured local user accounts and access permissions; prepared technical documentation and research presentations.</li>
       </ul>
+      <div class="tags"><span class="tag">Data Analysis</span><span class="tag">Research</span><span class="tag">Technical Support</span></div>
     </div>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
-    <p class="sec-sub">Selected work — code on GitHub.</p>
+    <div class="sec-eyebrow">03 — Projects</div>
+    <h2>Things I've built</h2>
+    <p class="sec-sub">Systems built to be used — each one backed by code on GitHub where a repository exists.</p>
     <div class="proj-grid">
 
       <div class="card">
+        <div class="proj-cat">Machine Learning · Analytics</div>
         <h3>Churn Prediction</h3>
-        <p>Machine learning model predicting customer churn at 88% accuracy on 500K+ records, with automated reporting that cut report turnaround from 3 days to 4 hours.</p>
+        <p>Machine learning model predicting customer churn on 500K+ records, with automated reporting that cut report turnaround from 3 days to 4 hours.</p>
+        <div class="metric">88% accuracy</div>
         <div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Machine Learning</span></div>
       </div>
 
       <div class="card">
+        <div class="proj-cat">AI · Computer Vision · NLP</div>
         <h3>Intelligent Document Processing</h3>
-        <p>M.S. capstone: a computer vision + NLP pipeline that extracts and classifies information from unstructured documents.</p>
+        <p>M.S. capstone: an end-to-end computer vision + NLP pipeline that extracts and classifies information from unstructured documents.</p>
         <div class="tags"><span class="tag">Python</span><span class="tag">Computer Vision</span><span class="tag">NLP</span></div>
         <a class="proj-link" href="https://github.com/Yalavarthijahnavi2017/intelligent-document-processing" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="card">
+        <div class="proj-cat">AI · Healthcare</div>
         <h3>AI Medical Symptom Chatbot</h3>
-        <p>AI-powered symptom checker achieving 87% classification accuracy, built with an NLP pipeline over a lightweight database backend.</p>
+        <p>A symptom-analysis chatbot built end to end — NLP pipeline in Python/Flask over a SQLite backend, designed to help users understand which ailment category their symptoms suggest.</p>
+        <div class="metric">87% classification accuracy</div>
         <div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">NLP</span><span class="tag">SQLite</span></div>
         <a class="proj-link" href="https://github.com/Yalavarthijahnavi2017/ai-medical-chatbot" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="card">
+        <div class="proj-cat">Full-Stack · NLP</div>
         <h3>Sentiment Analysis Platform</h3>
-        <p>Full-stack platform for sentiment analysis using transformer models, with a React frontend and a FastAPI + MongoDB backend.</p>
+        <p>Full-stack platform for sentiment analysis using transformer models, with a React frontend and a FastAPI + MongoDB backend performing real-time classification.</p>
         <div class="tags"><span class="tag">React</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">Hugging Face</span></div>
         <a class="proj-link" href="https://github.com/Yalavarthijahnavi2017/sentiment-analysis-platform" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="card">
-        <h3>Distributed Task Scheduling System</h3>
-        <p>Distributed task scheduler with Kafka-based messaging and a Redis-backed state store, using a producer / worker-consumer design.</p>
+        <div class="proj-cat">Systems · Streaming</div>
+        <h3>Distributed Task Scheduler</h3>
+        <p>A distributed task scheduling system with Kafka-based messaging and a Redis state store, using a producer / worker-consumer design for multi-node job execution.</p>
         <div class="tags"><span class="tag">Java</span><span class="tag">Apache Kafka</span><span class="tag">Redis</span></div>
         <a class="proj-link" href="https://github.com/Yalavarthijahnavi2017/distributed-task-scheduler" target="_blank" rel="noopener">View on GitHub →</a>
       </div>
 
       <div class="card">
-        <h3>Daycare Management Portal</h3>
-        <p>Management portal built during my Graduate Assistant role (React, Flask, MongoDB) that reduced manual paperwork for center staff.</p>
-        <div class="tags"><span class="tag">React</span><span class="tag">Flask</span><span class="tag">MongoDB</span></div>
-        <a class="proj-link" href="https://github.com/Yalavarthijahnavi2017/daycare-management-portal" target="_blank" rel="noopener">View on GitHub →</a>
+        <div class="proj-cat">Research</div>
+        <h3>Blockchain Smart-Grid Research</h3>
+        <p>Research on blockchain-based smart-grid asset monitoring and management — presented as a paper at ICRASTEM-2K23.</p>
+        <div class="metric">ICRASTEM-2K23 presented</div>
+        <div class="tags"><span class="tag">Blockchain</span><span class="tag">Smart Grid</span><span class="tag">Research Paper</span></div>
       </div>
 
     </div>
   </section>
 
+  <section id="skills">
+    <div class="sec-eyebrow">04 — Skills</div>
+    <h2>What I work with</h2>
+    <p class="sec-sub">The toolkit behind the pipelines, models, and dashboards above.</p>
+    <div class="skill-cards">
+      <div class="skill-card"><h4>⌘ Languages</h4><p>Python, SQL, Java, PHP</p></div>
+      <div class="skill-card"><h4>▦ Data</h4><p>pandas, ETL workflows, data pipelines, data warehousing, data cleaning &amp; validation, Tableau dashboards, reporting</p></div>
+      <div class="skill-card"><h4>🗄 Databases</h4><p>SQL Server, MySQL, MongoDB, SQLite, Redis</p></div>
+      <div class="skill-card"><h4>☁ Cloud &amp; Tools</h4><p>AWS, Azure, Apache Kafka, Git, ServiceNow (CSA)</p></div>
+      <div class="skill-card"><h4>🤖 ML &amp; AI</h4><p>Machine Learning, NLP, Hugging Face Transformers, Computer Vision</p></div>
+      <div class="skill-card"><h4>🌐 Web &amp; APIs</h4><p>React, Flask, FastAPI, REST APIs</p></div>
+    </div>
+    <div class="skillmap">
+      <div class="sec-eyebrow">My Skill Map</div>
+      <p class="sec-sub">How the toolkit connects — one core, six branches.</p>
+      <div class="core">Data Engineering Core</div>
+      <div class="branches">
+        <div class="branch"><h5>Languages &amp; Querying</h5><p>Python, SQL, MySQL, SQL Server</p></div>
+        <div class="branch"><h5>Data Engineering</h5><p>pandas, ETL pipelines, data warehousing, Apache Kafka, Redis</p></div>
+        <div class="branch"><h5>Machine Learning &amp; AI</h5><p>Machine learning, NLP, computer vision, Hugging Face transformers</p></div>
+        <div class="branch"><h5>Cloud &amp; Platforms</h5><p>AWS, Azure, cloud computing</p></div>
+        <div class="branch"><h5>Analytics &amp; BI</h5><p>Tableau, dashboards, reporting, data validation</p></div>
+        <div class="branch"><h5>Certification</h5><p>ServiceNow Certified System Administrator</p></div>
+      </div>
+    </div>
+    <div style="height:18px"></div>
+    <div class="cert-band">
+      <div>
+        <div class="ct">ServiceNow Certified System Administrator</div>
+        <div class="cs">Certification earned February 2026 — pursued independently to broaden platform and systems-administration depth.</div>
+      </div>
+      <div class="cert-badge">Certified · Feb 2026</div>
+    </div>
+  </section>
+
   <section id="education">
-    <h2>Education &amp; Certifications</h2>
+    <div class="sec-eyebrow">05 — Education</div>
+    <h2>Education</h2>
     <p class="sec-sub">&nbsp;</p>
     <div class="card">
-      <div class="job-head"><strong>M.S., Computer Science — Indiana State University</strong><span>Jan 2024 – Dec 2025</span></div>
+      <div class="job-head"><div><span class="job-title">M.S., Computer Science</span> — <span class="job-org">Indiana State University</span></div><span class="job-meta">Jan 2024 – Dec 2025</span></div>
       <p style="font-size:.94rem;color:var(--muted)">CGPA above 3.0</p>
     </div>
     <div class="card">
-      <div class="job-head"><strong>B.Tech, Computer Science — Vasireddy Venkatadri International Technological University</strong><span>Jun 2019 – Apr 2023 · First Class honors</span></div>
+      <div class="job-head"><div><span class="job-title">B.Tech, Computer Science</span> — <span class="job-org">Vasireddy Venkatadri International Technological University</span></div><span class="job-meta">Jun 2019 – Apr 2023 · First Class honors</span></div>
       <p style="font-size:.94rem;color:var(--muted)">CGPA above 3.0. Coursework: Machine Learning, Artificial Intelligence, Data Structures, DBMS, Operating Systems, Computer Networks.</p>
-    </div>
-    <div class="card">
-      <div class="job-head"><strong>ServiceNow Certified System Administrator (CSA) — ServiceNow</strong><span>Feb 2026</span></div>
-    </div>
-    <div class="card">
-      <div class="job-head"><strong>Cybersecurity Virtual Internship Certificate — Palo Alto Networks (AICTE EduSkills)</strong><span>May 2022</span></div>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p class="sec-sub">Open to full-time Data Engineer / Data Analyst roles — anywhere in the U.S.</p>
-    <div class="card">
-      <ul class="bullets" style="list-style:none;margin-left:0">
-        <li>✉️ <a href="mailto:yalavarthijahnavi2017@gmail.com">yalavarthijahnavi2017@gmail.com</a></li>
-        <li>📞 612-220-0194</li>
-        <li>🔗 <a href="https://www.linkedin.com/in/jahnavi-yalavarthi-36a9232a4/" target="_blank" rel="noopener">linkedin.com/in/jahnavi-yalavarthi-36a9232a4</a></li>
-        <li>💻 <a href="https://github.com/Yalavarthijahnavi2017" target="_blank" rel="noopener">github.com/Yalavarthijahnavi2017</a></li>
-      </ul>
+    <div class="sec-eyebrow">06 — Contact</div>
+    <h2>Let's talk about your data problem.</h2>
+    <p class="sec-sub">I'm based in Indiana and open to opportunities across the US. The fastest way to reach me is email — or connect with me on LinkedIn.</p>
+    <div class="card contact-links">
+      <p>✉️ <a href="mailto:yalavarthijahnavi2017@gmail.com">yalavarthijahnavi2017@gmail.com</a></p>
+      <p style="margin-top:8px">📞 612-220-0194</p>
+      <p style="margin-top:8px">🔗 <a href="https://www.linkedin.com/in/jahnavi-yalavarthi-36a9232a4/" target="_blank" rel="noopener">LinkedIn ↗</a> &nbsp;·&nbsp; 💻 <a href="https://github.com/Yalavarthijahnavi2017" target="_blank" rel="noopener">GitHub ↗</a></p>
     </div>
   </section>
 
@@ -267,7 +367,7 @@
 
 <footer>
   <div class="wrap">
-    <p>© 2026 Jahnavi Yalavarthi · Authorized to work in the U.S. under OPT (STEM eligible) · Open to relocation anywhere in the U.S.</p>
+    <p>© 2026 Yalavarthi Jahnavi · Indiana, USA · Authorized to work in the U.S. under OPT (STEM eligible) · Open to relocation anywhere in the U.S.</p>
   </div>
 </footer>
 
